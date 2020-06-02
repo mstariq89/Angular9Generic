@@ -32,11 +32,32 @@ button.calendar, button.calendar:active {
   box-shadow: none;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-  color: #fff;
-  background-color: #3c8dbc;
-  border-color: #3c8dbc; /*set the color you want here*/
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active {
+  background: #3c8dbc!important;
+  border-color: #3c8dbc;
+  outline: none;
+  box-shadow: none!important;
 }
+
+// .btn-primary:focus{
+//   background: #3c8dbc!important;
+//   border-color: #3c8dbc;
+//   outline: none;
+//   box-shadow: none !important;
+// }
+
+// .btn-primary:active{
+//   background: #3c8dbc!important;
+//   border-color: #3c8dbc;
+//   outline: none;
+//   box-shadow: none !important;
+// }
+
+// .btn-primary:hover, .btn-primary:focus, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+//   color: #fff;
+//   background-color: #3c8dbc;
+//   border-color: #3c8dbc; /*set the color you want here*/
+// }
 
 .page-item.active .page-link {
   z-index: 3;
