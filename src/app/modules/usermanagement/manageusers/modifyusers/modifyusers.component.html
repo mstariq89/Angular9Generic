@@ -1,0 +1,68 @@
+<!-- <p>Modify Users</p> -->
+<form>
+    <div class="form-group form-inline">
+        Search: <input class="form-control ml-2" type="text" name="searchTerm" placeholder="Enter search term here.." [(ngModel)]="service.searchTerm"/>
+        <span class="ml-3" *ngIf="service.loading$ | async">Loading...</span>
+    </div>
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead >
+      <tr>
+        <!-- <th scope="col">#</th>
+        <th scope="col" sortable="name" (sort)="onSort($event)">Country</th>
+        <th scope="col" sortable="area" (sort)="onSort($event)">Area</th>
+        <th scope="col" sortable="population" (sort)="onSort($event)">Population</th> -->
+        <th scope="col" sortable="firstname" (sort)="onSort($event)">FirstName</th>
+        <th scope="col" sortable="lastname" (sort)="onSort($event)">LastName</th>
+        <th scope="col" sortable="emailid" (sort)="onSort($event)">EmailId</th>
+        <th scope="col" sortable="country" (sort)="onSort($event)">Country</th>
+        <th scope="col" sortable="role" (sort)="onSort($event)">Role</th>
+        <th scope="col" sortable="status" (sort)="onSort($event)">Status</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let country of countries$ | async">
+        <!-- <th scope="row">{{ country.id }}</th>
+        <td>
+          <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+          <ngb-highlight [result]="country.name" [term]="service.searchTerm"></ngb-highlight>
+        </td>
+        <td><ngb-highlight [result]="country.area | number" [term]="service.searchTerm"></ngb-highlight></td>
+        <td><ngb-highlight [result]="country.population | number" [term]="service.searchTerm"></ngb-highlight></td> -->
+        <td><ngb-highlight [result]="country.firstname" [term]="service.searchTerm"></ngb-highlight></td>
+        <td><ngb-highlight [result]="country.lastname" [term]="service.searchTerm"></ngb-highlight></td>
+        <td><ngb-highlight [result]="country.emailid" [term]="service.searchTerm"></ngb-highlight></td>
+        <td><ngb-highlight [result]="country.country" [term]="service.searchTerm"></ngb-highlight></td>
+        <td><ngb-highlight [result]="country.role" [term]="service.searchTerm"></ngb-highlight></td>
+        <td><ngb-highlight [result]="country.status" [term]="service.searchTerm"></ngb-highlight></td>
+        <td>
+          <a data-toggle="tooltip" title="Edit"><i class="fas fa-user-edit" style="color:#3c8dbc;"></i></a> &nbsp;
+          <a data-toggle="tooltip" title="Delete" (click)="deleteUser();"><i class="fas fa-user-minus" style="color:lightcoral;"></i></a>
+          <!-- <span class="icon-stack">
+            <i class="fas fa-user icon-stack-2x"></i>
+            <i class="fas fa-trash-alt icon-stack-1x"></i>
+         </span> -->
+        </td>
+      </tr>
+      </tbody>
+      <tfoot *ngIf="(countries$ | async)?.length==0">
+        <tr>
+          <td style="text-align: center;" colspan='7'>No Data to Display</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+    <div class="d-flex justify-content-between p-2" *ngIf="(countries$ | async)?.length>0">
+      <ngb-pagination
+        [collectionSize]="(total$ | async)!" [(page)]="service.page" [pageSize]="service.pageSize" [boundaryLinks]="true">
+      </ngb-pagination>
+  
+      <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+      </select>
+    </div>
+  
+  </form>

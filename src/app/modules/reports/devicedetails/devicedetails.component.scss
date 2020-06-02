@@ -1,0 +1,35 @@
+.card-primary:not(.card-outline)>.card-header {
+    background-color: #3c8dbc;
+}
+
+.card-info:not(.card-outline)>.card-header {
+    background-color: #3c8dbc;
+}
+
+.card-primary.card-outline {
+    border-top: 3px solid #3c8dbc;
+}
+
+// .btn-primary {
+//     color: #fff;
+//     background-color: #3c8dbc;
+//     border-color: #3c8dbc;
+//     box-shadow: none;
+// }
+
+// .daterangepicker .ranges li.active {
+//     background-color: #3c8dbc;
+//     color: #fff;
+// }
+
+// .dropdown-item.active, .dropdown-item:active {
+//     color: #fff;
+//     text-decoration: none;
+//     background-color: #3c8dbc;
+// }
+
+// .show>.btn-primary.dropdown-toggle {
+//     color: #fff;
+//     background-color: #3c8dbc;
+//     border-color: #3c8dbc;
+// }

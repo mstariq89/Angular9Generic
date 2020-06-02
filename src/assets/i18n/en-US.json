@@ -1,0 +1,66 @@
+{
+    "Auth":{
+        "Title":{
+            "LoginTitle": "Sign in to start your session",
+            "ForgotPasswordTitle": "Forgot your password? Here you can retrieve a new password.",
+            "RecoverPasswordTitle": "You are only one step a way from your new password, recover your password now.",
+            "RegisterTitle": "Register a new user"
+        },
+        "InputFields" : {
+            "Email": "Email",
+            "Password": "Password",
+            "ConfirmPassword": "Confirm Password",
+            "RememberMe": "Remember Me",
+            "AgreeLbl": "I agree to the",
+            "TermsLbl": "terms",
+            "AlreadyHaveAccountLbl": "I already have an account"
+        },
+        "Buttons": {
+            "SignInBtn": "Sign In",
+            "ForgotPasswordBtn": "I forgot my password",
+            "RegisterUserBtn": "Register a new user",
+            "RegisterBtn": "Register",
+            "FBSignInBtn": "Sign in using Facebook",
+            "GoogleSignInBtn": "Sign in using Google+",
+            "RequestNewPWBtn": "Request new password",
+            "ChangePWBtn": "Change password"
+        }
+    },
+    "Common": {
+        "Validations":{
+            "EmailRequired": "Email is required",
+            "PasswordRequired": "Password is required"
+        }
+    },
+    "Dashboard": {
+        "Menu": "Dashboard",
+        "Title": "Dashboard"
+    },
+    "CustomerManagement": {
+        "Menu": "Customer Management",
+        "Title": "Customer Management",
+        "ManageCustomersMenu" : "Manage Customers",
+        "ManageCustomersTitle" : "Manage Customers",
+        "ManageClinicsMenu" : "Manage Clinics",
+        "ManageClinicsTitle" : "Manage Clinics",
+        "AssignDeviceMenu" : "Assign Device",
+        "AssignDeviceTitle" : "Assign Device"
+        
+    },
+    "UserManagement": {
+        "Menu": "User Management",
+        "Title": "User Management",
+        "ManageUsersMenu" : "Manage Users",
+        "ManageUsersTitle" : "Manage Users",
+        "ManageRolesMenu" : "Manage Roles",
+        "ManageRolesTitle" : "Manage Roles"
+    },
+    "DeviceManagement": {
+        "Menu": "Device Management",
+        "Title": "Device Management"
+    },
+    "Reports": {
+        "Menu": "Reports",
+        "Title": "Device Reports"
+    }
+}

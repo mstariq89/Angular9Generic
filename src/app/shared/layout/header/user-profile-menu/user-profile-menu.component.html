@@ -1,0 +1,45 @@
+<li class="nav-item dropdown user user-menu">
+    <!-- <a
+      class="nav-link dropdown-toggle"
+      data-toggle="dropdown"
+      (click)="toggleDropdownMenu()"
+    >
+      <img
+        [src]="user.image"
+        class="user-image img-circle elevation-2"
+        alt="User Image"
+      />
+      
+    </a> -->
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" >
+      <img [src]="user.image" class="user-image img-circle elevation-2" alt="User Image" 
+      style="width: 35px;height: 35px;"/>
+      <span style="font-size: 12px;color:#3c8dbc;">&nbsp;&nbsp; Welcome Alexander!</span>
+    </a>
+    <ul #dropdownMenu class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+      <!-- User image -->
+      <li class="user-header bg-primary">
+        <img [src]="user.image" class="img-circle elevation-2" alt="User Image" />
+  
+        <p>
+          Alexander Pierce - Admin
+          <small>Last login - 05/12/2020 06:00:00 PM</small>
+        </p>
+      </li>
+      
+      <!-- Menu Footer-->
+      <li class="user-footer">
+        <a [routerLink]="['/usersettings/profile']" class="btn btn-default btn-flat">
+          Profile
+        </a>
+        <a (click)="logout()" class="btn btn-default btn-flat float-right"
+          >Sign out</a
+        >
+      </li>
+    </ul>
+  </li>
+
+
+
+  
+  

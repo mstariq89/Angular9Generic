@@ -1,0 +1,154 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h5 class="card-title">Device Details</h5>
+                
+                <!-- <button type="button" class="btn btn-primary btn-xs daterange ml-2" 
+                 title="Date range">
+                    <i class="far fa-calendar-alt"></i>&nbsp;
+                    <span></span>&nbsp;
+                    <i class="fa fa-caret-down"></i>
+                </button> -->
+            <!-- <div class="btn-group dropright customDateRange">
+                <button type="button" class="btn btn-primary btn-xs dropdown-toggle ml-2" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="far fa-calendar-alt"></i>&nbsp;
+                    <span></span>&nbsp;
+                </button>
+                <div class="dropdown-menu">
+                    <li> <a class="dropdown-item" (click)="setDateRange('today');">Today</a></li>
+                    <li> <a class="dropdown-item" (click)="setDateRange('7d');">Last 7 Days</a></li>
+                    <li> <a class="dropdown-item" (click)="setDateRange('14d');">Last 14 Days</a></li>
+                    <li> <a class="dropdown-item active" (click)="setDateRange('30d');">Last 30 Days</a></li>
+                    <li> <a class="dropdown-item" (click)="setDateRange('TM');">This Month</a></li>
+                    <li> <a class="dropdown-item" (click)="setDateRange('LM');">Last Month</a></li>
+                    <div class="dropdown-divider"></div>
+                    <li> <a class="dropdown-item" (click)="setCustomRange();">Custom Range</a></li>
+            
+                </div>
+            </div> -->
+                <div class="card-tools">
+                    <app-date-range-selector></app-date-range-selector>
+                    <button type="button" class="btn btn-tool" (click)="onClickPdfDownload();">
+                        <i class="fas fa-file-pdf fa-2x" style="color: #3c8dbc;"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- PIE CHART -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Pie Chart</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                            class="fas fa-minus"></i>
+                                    </button>
+                                    <!-- <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                                            class="fas fa-times"></i></button> -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart">
+                                    <div id="chartContainer"></div>
+                                    <!-- <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions"
+                                        style="width: 100%; height: 400px; display: block;">
+                                    </highcharts-chart> -->
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <div class="col-md-6">
+                        <!-- COMBINATION CHART -->
+                        <div class="card card-info">
+                            <div class="card-header">
+                                <h3 class="card-title">Combination Chart</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                            class="fas fa-minus"></i>
+                                    </button>
+                                    <!-- <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                                            class="fas fa-times"></i></button> -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart">
+                                    <div id="chartContainerCC"></div>
+                                    <!-- <highcharts-chart [Highcharts]="highcharts" [options]="chartOptionsCC"
+                                        style="width: 100%; height: 400px; display: block;">
+                                    </highcharts-chart> -->
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- STACKED CHART -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Stacked Chart</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                            class="fas fa-minus"></i>
+                                    </button>
+                                    <!-- <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                                            class="fas fa-times"></i></button> -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart">
+                                    <div id="chartContainerSC"></div>
+                                    <!-- <highcharts-chart [Highcharts]="highcharts" [options]="chartOptionsSC"
+                                        style="width: 100%; height: 400px; display: block;">
+                                    </highcharts-chart> -->
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <div class="col-md-6">
+                        <!-- BAR CHART -->
+                        <div class="card card-info">
+                            <div class="card-header">
+                                <h3 class="card-title">Bar Chart</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                            class="fas fa-minus"></i>
+                                    </button>
+                                    <!-- <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                                            class="fas fa-times"></i></button> -->
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart">
+                                    <div id="chartContainerBC"></div>
+                                    <!-- <highcharts-chart [Highcharts]="highcharts" [options]="chartOptionsBC"
+                                        style="width: 100%; height: 400px; display: block;">
+                                    </highcharts-chart> -->
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="card-footer">
+            </div> -->
+            <!-- /.card-footer -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.col -->
+</div>

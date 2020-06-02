@@ -1,0 +1,172 @@
+<!-- Add this class for light menu - class="main-sidebar elevation-4 sidebar-light-info" -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="index3.html" class="brand-link navbar-lightblue">
+    <img src="assets/images/HC_Logo.JPG" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+         style="opacity: .8">
+    <span class="brand-text font-weight-light"><b>EH</b>ealth<b>C</b>are</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src="assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="#" class="d-block">Alexander Pierce</a>
+      </div>
+    </div> -->
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul
+        class="nav nav-pills nav-sidebar flex-column"
+        data-widget="treeview"
+        role="menu"
+        data-accordion="false"
+      >
+        <!-- Add icons to the links using the .nav-icon class
+             with font-awesome or any other icon font library -->
+        <li class="nav-item">
+          <a [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link " >
+            <i class="nav-icon fas fa-house-user"></i>
+            <p>
+              {{'Dashboard.Menu' | translate}}
+            </p>
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a [routerLink]="['/blank']" class="nav-link">
+            <i class="nav-icon fa fa-users"></i>
+            <p>
+              User Management
+            </p>
+          </a>
+        </li> -->
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-users"></i>
+            <p>
+              {{'UserManagement.Menu' | translate}}
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a [routerLink]="['/usermanagement/manageusers']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+                <i class="fas fa-user-plus nav-icon"></i>
+                <p>{{'UserManagement.ManageUsersMenu' | translate}}</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/usermanagement/manageroles']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+                <i class="fas fa-users-cog nav-icon"></i>
+                <p>{{'UserManagement.ManageRolesMenu' | translate}}</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-user-cog"></i>
+            <p>
+              {{'CustomerManagement.Menu' | translate}}
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a [routerLink]="['/customermanagement/managecustomers']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+                <i class="fas fa-hospital-user nav-icon"></i>
+                <p>{{'CustomerManagement.ManageCustomersMenu' | translate}}</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/customermanagement/manageclinics']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+                <i class="fas fa-clinic-medical nav-icon"></i>
+                <p>{{'CustomerManagement.ManageClinicsMenu' | translate}}</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/customermanagement/assign-device']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+                <i class="fas fa-clipboard-check nav-icon"></i>
+                <p>{{'CustomerManagement.AssignDeviceMenu' | translate}}</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-treeview" *ngIf="isAdmin">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-laptop-medical"></i>
+            <p>
+              {{'DeviceManagement.Menu' | translate}}
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fa fa-plus nav-icon"></i>
+                <p>Device Registration</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fa fa-check nav-icon"></i>
+                <p>Device Activation</p>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fas fa-clinic-medical nav-icon"></i>
+                <p>Assign Device</p>
+              </a>
+            </li> -->
+          </ul>
+        </li>
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-chart-pie"></i>
+            <p>
+              {{'Reports.Menu' | translate}}
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a [routerLink]="['/reports/devicehistory']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+                <i class="nav-icon fas fa-chart-area"></i>
+                <p>Device History</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/reports/devicedetails']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+                <i class="fas fa-chart-pie nav-icon"></i>
+                <p>Device Details</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chart-bar"></i>
+                <p>Device Deployment</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/contact']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+            <i class="nav-icon fas fa-address-book"></i>
+            <p>
+              Contact
+            </p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

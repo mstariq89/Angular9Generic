@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-primary card-outline">
+      <div class="card-header">
+        <h5 class="card-title">{{'CustomerManagement.AssignDeviceTitle' | translate}}</h5>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+            <i class="fas fa-minus"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <!-- <p>Assign Device to Clinics</p> -->
+        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modalAssignDevice">
+          <i class="fas fa-plus"></i>
+           Assign Device to Clinics
+        </button>
+      </div>
+      <!-- /.card-footer -->
+    </div>
+    <!-- /.card -->
+  </div>
+  <!-- /.col -->
+</div>
+
+
+<div class="modal fade" id="modalAssignDevice">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title">Assign Device to Clinics</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <p></p>
+          </div>
+          <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                Close
+              </button>
+              <button type="button" class="btn btn-primary" (click)="assignDevice();">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                Save
+              </button>
+          </div>
+      </div>
+      <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
