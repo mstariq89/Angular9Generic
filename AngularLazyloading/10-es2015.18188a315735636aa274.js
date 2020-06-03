@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{Cnya:function(n,t,o){"use strict";o.r(t),o.d(t,"UserSettingsModule",(function(){return c}));var e=o("ofXK"),r=o("jzm+"),s=o("fXoL");let c=(()=>{class n{}return n.\u0275mod=s.Kb({type:n}),n.\u0275inj=s.Jb({factory:function(t){return new(t||n)},imports:[[e.c,r.a]]}),n})()}}]);

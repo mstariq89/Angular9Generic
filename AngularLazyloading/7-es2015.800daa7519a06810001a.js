@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{KDoN:function(n,o,t){"use strict";t.r(o),t.d(o,"CustomermanagementModule",(function(){return c}));var e=t("ofXK"),r=t("ohFn"),s=t("sYmb"),u=t("fXoL");let c=(()=>{class n{}return n.\u0275mod=u.Kb({type:n}),n.\u0275inj=u.Jb({factory:function(o){return new(o||n)},imports:[[e.c,r.a,s.b]]}),n})()}}]);

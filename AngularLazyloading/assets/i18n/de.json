@@ -1,0 +1,65 @@
+{
+   "Auth":{
+      "Title":{
+         "LoginTitle":"Anmelden starten Sie Ihre Sitzung",
+         "ForgotPasswordTitle":"Haben Sie Ihr Passwort vergessen? Hier erhalten Sie ein neues Passwort.",
+         "RecoverPasswordTitle":"Sie sind nur einen Schritt Weg von Ihrem neuen Passwort, Ihr Passwort jetzt.",
+         "RegisterTitle":"Registrieren Sie einen neuen Benutzer"
+      },
+      "InputFields":{
+         "Email":"E-Mail",
+         "Password":"Passwort",
+         "ConfirmPassword":"Kennwort Bestätigen",
+         "RememberMe":"Erinnern Sie Sich An Mich",
+         "AgreeLbl":"Ich Stimme den",
+         "TermsLbl":"Bedingungen",
+         "AlreadyHaveAccountLbl":"Ich habe bereits ein Konto"
+      },
+      "Buttons":{
+         "SignInBtn":"Anmelden",
+         "ForgotPasswordBtn":"Ich habe mein Passwort vergessen",
+         "RegisterUserBtn":"Registrieren Sie einen neuen Benutzer",
+         "RegisterBtn":"Registrieren",
+         "FBSignInBtn":"Melden Sie sich mit Facebook",
+         "GoogleSignInBtn":"Melden Sie sich mit Google+",
+         "RequestNewPWBtn":"Neues Passwort anfordern",
+         "ChangePWBtn":"Passwort ändern"
+      }
+   },
+   "Common":{
+      "Validations":{
+         "EmailRequired":"E-Mail ist erforderlich",
+         "PasswordRequired":"Ein Passwort ist erforderlich"
+      }
+   },
+   "Dashboard":{
+      "Menu":"Dashboard",
+      "Title":"Dashboard"
+   },
+   "CustomerManagement":{
+      "Menu":"Kunden-Management",
+      "Title":"Kunden-Management",
+      "ManageCustomersMenu":"Kunden Verwalten",
+      "ManageCustomersTitle":"Kunden Verwalten",
+      "ManageClinicsMenu":"Verwalten Kliniken",
+      "ManageClinicsTitle":"Verwalten Kliniken",
+      "AssignDeviceMenu":"Gerät Zuweisen",
+      "AssignDeviceTitle":"Gerät Zuweisen"
+   },
+   "UserManagement":{
+      "Menu":"User Management",
+      "Title":"User Management",
+      "ManageUsersMenu":"Benutzer Verwalten",
+      "ManageUsersTitle":"Benutzer Verwalten",
+      "ManageRolesMenu":"Rollen Verwalten",
+      "ManageRolesTitle":"Rollen Verwalten"
+   },
+   "DeviceManagement":{
+      "Menu":"Device Management",
+      "Title":"Device Management"
+   },
+   "Reports":{
+      "Menu":"Berichte",
+      "Title":"Gerät Berichten"
+   }
+}
