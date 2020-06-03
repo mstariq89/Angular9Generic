@@ -14,7 +14,7 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" >
       <img [src]="user.image" class="user-image img-circle elevation-2" alt="User Image" 
       style="width: 35px;height: 35px;"/>
-      <span style="font-size: 12px;color:#3c8dbc;">&nbsp;&nbsp; Welcome Alexander!</span>
+      <span style="font-size: 12px;color:black;">&nbsp;&nbsp; Welcome Alexander!</span>
     </a>
     <ul #dropdownMenu class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
       <!-- User image -->
@@ -29,12 +29,12 @@
       
       <!-- Menu Footer-->
       <li class="user-footer">
-        <a [routerLink]="['/usersettings/profile']" class="btn btn-default btn-flat">
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/usersettings/profile']">Profile</button>
+        <button type="button" class="btn btn-outline-primary float-right" (click)="logout()">Sign out</button>
+        <!-- <a [routerLink]="['/usersettings/profile']" class="btn btn-default btn-flat">
           Profile
-        </a>
-        <a (click)="logout()" class="btn btn-default btn-flat float-right"
-          >Sign out</a
-        >
+        </a> -->
+        <!-- <a (click)="logout()" class="btn btn-default btn-flat float-right">Sign out</a> -->
       </li>
     </ul>
   </li>

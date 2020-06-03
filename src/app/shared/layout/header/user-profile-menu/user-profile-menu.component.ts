@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { AppService } from 'src/app/utils/services/app/app.service';
 import { AuthenticationService } from 'src/app/utils/services/authentication/authentication.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-user-profile-menu',
@@ -56,7 +57,21 @@ export class UserProfileMenuComponent implements OnInit {
   logout() {
     // this.appService.logout1();
     // localStorage.removeItem("isDateStored");
-    this.authenticationService.logout();
+    Swal.fire({
+      width:'30rem',
+      title: 'Are you sure you want to logout?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.value) {
+        this.authenticationService.logout();
+      }
+    })
+    // this.authenticationService.logout();
 
   }
   
