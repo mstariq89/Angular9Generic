@@ -1,0 +1,24 @@
+<div id="ac90819em1" class="modal-header">
+    <h4 id="ac90819h41" class="modal-title">Session Timeout warning</h4>
+</div>
+<div id="ac90819di1" class="modal-body">
+    <span>
+        Your session is about to expire!
+
+
+        You will be timed out in
+        {{(countMinutes !== 0 ? + countMinutes+' Minute'+(countMinutes > 1 ? 's ' : ' ') : '') + countSeconds+' Seconds'}}
+    </span>
+    <br/>
+    <p>
+        <ngb-progressbar type="info" [value]="progressCount" [max]="progressMaxVal" textType="white" [striped]="true"
+            [animated]="true" animate="false" id="ac90819ou1" class="progress-striped active">
+            {{ progressCount / progressMaxVal | percent }}
+        </ngb-progressbar>
+    </p>
+    <span>To stay, click <b>Continue</b> otherwise <b>Logout</b></span>
+</div>
+<div id="ac90819di2" class="modal-footer">
+    <button type="button" id="ac90819bu1" class="btn btn-primary" (click)="continue()">Continue</button>
+    <button type="button" id="ac90819bu2" class="btn btn-outline-secondary" (click)="logout()">Logout</button>
+</div>

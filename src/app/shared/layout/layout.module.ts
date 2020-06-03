@@ -15,11 +15,14 @@ import { ContactModule } from 'src/app/modules/contact/contact.module';
 import { RouterModule } from '@angular/router';
 import { ReportsRoutingModule } from 'src/app/modules/reports/reports-routing.module';
 import { ContactRoutingModule } from 'src/app/modules/contact/contact-routing.module';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS,HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from 'src/app/utils/interceptor/jwt.interceptor';
 import { ErrorInterceptor } from 'src/app/utils/interceptor/error.interceptor';
 import { fakeBackendProvider } from 'src/app/utils/helpers/fake-backend';
 import { UserSettingsRoutingModule } from 'src/app/modules/user-settings/user-settings-routing.module';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgIdleKeepaliveModule} from '@ng-idle/keepalive';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { UserSettingsRoutingModule } from 'src/app/modules/user-settings/user-se
     ContactRoutingModule,
     RouterModule,
     ReportsRoutingModule,
-    UserSettingsRoutingModule
+    UserSettingsRoutingModule,
+    NgbModule,
+    NgIdleKeepaliveModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

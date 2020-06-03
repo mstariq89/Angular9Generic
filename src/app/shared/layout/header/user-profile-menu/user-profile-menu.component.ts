@@ -55,7 +55,7 @@ export class UserProfileMenuComponent implements OnInit {
 
   logout() {
     // this.appService.logout1();
-    localStorage.removeItem("isDateStored");
+    // localStorage.removeItem("isDateStored");
     this.authenticationService.logout();
 
   }
