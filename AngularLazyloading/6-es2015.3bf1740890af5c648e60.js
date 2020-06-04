@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{kPMt:function(n,t,o){"use strict";o.r(t),o.d(t,"ContactModule",(function(){return u}));var r=o("ofXK"),c=o("l5VS"),e=o("fXoL");let u=(()=>{class n{}return n.\u0275mod=e.Kb({type:n}),n.\u0275inj=e.Jb({factory:function(t){return new(t||n)},imports:[[r.c,c.a]]}),n})()}}]);
