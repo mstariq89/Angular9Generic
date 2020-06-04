@@ -137,7 +137,13 @@ export class DateRangeSelectorComponent implements OnInit {
     this.dateFormatStr = start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY');
     $('.daterange span').html(this.dateFormatStr);
 
-    $('.customDateRange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    //$('.customDateRange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+
+    const dateRange = {
+      from: start,
+      to: end
+    };
+    this.dateRangeSelection.emit(dateRange);
   }
 
 

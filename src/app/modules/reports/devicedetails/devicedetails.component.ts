@@ -24,8 +24,8 @@ export class DevicedetailsComponent implements OnInit {
    chartOptions: any;
    chartOptionsCC: any;
    chartOptionsBC: any;
-   chartOptionsSC:any;
-   currDateStr : any;
+   chartOptionsSC: any;
+   currDateStr: any;
    pastDateStr: any;
    currDate = new Date();
    imgLogoToBase64: any;
@@ -38,22 +38,22 @@ export class DevicedetailsComponent implements OnInit {
    chartSC: Highcharts.Chart;
    constructor(private datePipe: DatePipe,
       private spinner: NgxSpinnerService,
-      private sweetalertSvc : Sweetalert2Service) {
-      
+      private sweetalertSvc: Sweetalert2Service) {
+
 
       this.currDateStr = this.datePipe.transform(this.currDate, 'yyyy/MM/dd');
-      this.pastDateStr = this.datePipe.transform(new Date().setDate(this.currDate.getDate()-30), 'yyyy/MM/dd');
-      
-    }
+      this.pastDateStr = this.datePipe.transform(new Date().setDate(this.currDate.getDate() - 30), 'yyyy/MM/dd');
+
+   }
 
    ngOnInit(): void {
 
       //$('a').click(function() { 
-         //       $('a.dropdown-item.active').removeClass("active"); 
-         //       $(this).addClass("active"); 
-         //   });
+      //       $('a.dropdown-item.active').removeClass("active"); 
+      //       $(this).addClass("active"); 
+      //   });
 
-         
+
 
       // $('input[name="daterange"]').daterangepicker({
       //    opens: 'left'
@@ -66,22 +66,22 @@ export class DevicedetailsComponent implements OnInit {
       // var end = moment();
 
 
-//       $('#reportrange').daterangepicker({
-//          startDate: start,
-//          endDate: end,
-//          ranges: {
-//             'Today': [moment(), moment()],
-//             'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-//             'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-//             'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-//             'This Month': [moment().startOf('month'), moment().endOf('month')],
-//             'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-//          }
-//      }, function (start, end) {
-//       $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-//   });
- 
-     
+      //       $('#reportrange').daterangepicker({
+      //          startDate: start,
+      //          endDate: end,
+      //          ranges: {
+      //             'Today': [moment(), moment()],
+      //             'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+      //             'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+      //             'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+      //             'This Month': [moment().startOf('month'), moment().endOf('month')],
+      //             'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+      //          }
+      //      }, function (start, end) {
+      //       $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      //   });
+
+
 
       // $('.daterange').daterangepicker({
       //    // "showDropdowns": true,
@@ -102,13 +102,13 @@ export class DevicedetailsComponent implements OnInit {
       // this.cb(this.start, this.end);
 
 
-      this.loadChart();
+      //this.loadChart();
    }
 
    cb(start, end) {
       $('.daterange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
       $('.customDateRange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-  }
+   }
 
    loadChart() {
       this.loadPieChart();
@@ -116,7 +116,7 @@ export class DevicedetailsComponent implements OnInit {
       this.loadBarChart();
       this.loadStackedColumnChart();
    }
-   
+
 
    loadPieChart() {
       this.chartOptions = {
@@ -334,7 +334,7 @@ export class DevicedetailsComponent implements OnInit {
    loadStackedColumnChart() {
       this.chartOptionsSC = {
          chart: {
-             type: 'column'
+            type: 'column'
          },
          credits: {
             enabled: false
@@ -343,29 +343,29 @@ export class DevicedetailsComponent implements OnInit {
             enabled: false
          },
          title: {
-             text: 'Stacked Column Chart'
+            text: 'Stacked Column Chart'
          },
          subtitle: {
             text: this.currDateStr + ' - ' + this.pastDateStr
          },
          xAxis: {
-             categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
          },
          yAxis: {
-             min: 0,
-             title: {
-                 text: 'Total fruit consumption'
-             },
-             stackLabels: {
-                 enabled: true,
-                 style: {
-                     fontWeight: 'bold',
-                     color: ( // theme
-                         Highcharts.defaultOptions.title.style &&
-                         Highcharts.defaultOptions.title.style.color
-                     ) || 'gray'
-                 }
-             }
+            min: 0,
+            title: {
+               text: 'Total fruit consumption'
+            },
+            stackLabels: {
+               enabled: true,
+               style: {
+                  fontWeight: 'bold',
+                  color: ( // theme
+                     Highcharts.defaultOptions.title.style &&
+                     Highcharts.defaultOptions.title.style.color
+                  ) || 'gray'
+               }
+            }
          },
          legend: {
             //  align: 'right',
@@ -380,42 +380,42 @@ export class DevicedetailsComponent implements OnInit {
             //  shadow: false
          },
          tooltip: {
-             headerFormat: '<b>{point.x}</b><br/>',
-             pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+            headerFormat: '<b>{point.x}</b><br/>',
+            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
          },
          plotOptions: {
-             column: {
-                 stacking: 'normal',
-                 dataLabels: {
-                     enabled: true
-                 }
-             }
+            column: {
+               stacking: 'normal',
+               dataLabels: {
+                  enabled: true
+               }
+            }
          },
          series: [{
-             name: 'John',
-             data: [5, 3, 4, 7, 2]
+            name: 'John',
+            data: [5, 3, 4, 7, 2]
          }, {
-             name: 'Jane',
-             data: [2, 2, 3, 2, 1]
+            name: 'Jane',
+            data: [2, 2, 3, 2, 1]
          }, {
-             name: 'Joe',
-             data: [3, 4, 4, 2, 5]
+            name: 'Joe',
+            data: [3, 4, 4, 2, 5]
          }]
-     };
-     this.chartSC = Highcharts.chart('chartContainerSC', this.chartOptionsSC);
+      };
+      this.chartSC = Highcharts.chart('chartContainerSC', this.chartOptionsSC);
 
    }
 
-   onClickPdfDownload(){
+   onClickPdfDownload() {
       this.spinner.show();
-      
+
       setTimeout(() => {
          this.pdfDownload();
-      
+
          /** spinner ends after 5 seconds */
          this.spinner.hide();
-       }, 1000);
-      
+      }, 1000);
+
    }
 
    pdfDownload() {
@@ -426,8 +426,8 @@ export class DevicedetailsComponent implements OnInit {
             width: 450,
             height: 550
          }
-       });
-       var chartCanvas = document.createElement('canvas');
+      });
+      var chartCanvas = document.createElement('canvas');
       canvg(chartCanvas, chartSVG);
       var chartBase64 = chartCanvas.toDataURL('image/PNG');
       doc.addImage(chartBase64, 'PNG', 80, 120, 300, 320, '', 'FAST');
@@ -437,8 +437,8 @@ export class DevicedetailsComponent implements OnInit {
             width: 450,
             height: 550
          }
-       });
-       var chartCanvasCC = document.createElement('canvas');
+      });
+      var chartCanvasCC = document.createElement('canvas');
       canvg(chartCanvasCC, chartSVGCC);
       var chartCCBase64 = chartCanvasCC.toDataURL('image/PNG');
       doc.addImage(chartCCBase64, 'PNG', 480, 120, 300, 320, '', 'FAST');
@@ -450,8 +450,8 @@ export class DevicedetailsComponent implements OnInit {
             width: 450,
             height: 550
          }
-       });
-       var chartCanvasSC = document.createElement('canvas');
+      });
+      var chartCanvasSC = document.createElement('canvas');
       canvg(chartCanvasSC, chartSVGSC);
       var chartSCBase64 = chartCanvasSC.toDataURL('image/PNG');
       doc.addImage(chartSCBase64, 'PNG', 80, 120, 300, 320, '', 'FAST');
@@ -461,32 +461,32 @@ export class DevicedetailsComponent implements OnInit {
             width: 450,
             height: 550
          }
-       });
-       var chartCanvasBC = document.createElement('canvas');
+      });
+      var chartCanvasBC = document.createElement('canvas');
       canvg(chartCanvasBC, chartSVGBC);
       var chartBCBase64 = chartCanvasBC.toDataURL('image/PNG');
       doc.addImage(chartBCBase64, 'PNG', 480, 120, 300, 320, '', 'FAST');
       this.addPageNumber(doc);
       doc.save("EHealthCare.pdf");
 
-      this.sweetalertSvc.sweetalertShow('success','Report PDF downloaded successfully',"Now you can view the downloaded pdf");
+      this.sweetalertSvc.sweetalertShow('success', 'Report PDF downloaded successfully', "Now you can view the downloaded pdf");
    }
 
    addPageNumber(doc: any) {
 
       let totalPages = doc.internal.getNumberOfPages();
       for (var i = 0; i < totalPages; i++) {
-        doc.setPage(i);
-        doc.setFontSize(7);
-        doc.setTextColor(128, 128, 128);
-        doc.line(20, doc.internal.pageSize.height - 40, 820, doc.internal.pageSize.height - 40);
-        
-        doc.setFontType("normal");
-        doc.setFontSize(10);
-        doc.setFontSize(8);
-        doc.text("Page " + doc.internal.getCurrentPageInfo().pageNumber + " of " + totalPages, 780, doc.internal.pageSize.height - 15);
+         doc.setPage(i);
+         doc.setFontSize(7);
+         doc.setTextColor(128, 128, 128);
+         doc.line(20, doc.internal.pageSize.height - 40, 820, doc.internal.pageSize.height - 40);
+
+         doc.setFontType("normal");
+         doc.setFontSize(10);
+         doc.setFontSize(8);
+         doc.text("Page " + doc.internal.getCurrentPageInfo().pageNumber + " of " + totalPages, 780, doc.internal.pageSize.height - 15);
       }
-    }
+   }
 
    setDateRange(dateRange) {
       switch (dateRange) {
@@ -509,21 +509,27 @@ export class DevicedetailsComponent implements OnInit {
          case 'TM':
             this.start = moment().startOf('month');
             this.end = moment().endOf('month');
-            break;    
+            break;
          case 'LM':
             this.start = moment().subtract(1, 'month').startOf('month');
             this.end = moment().subtract(1, 'month').endOf('month');
-            break; 
+            break;
       }
       this.cb(this.start, this.end);
 
    }
-   setCustomRange(){
+   setCustomRange() {
 
    }
 
    public onDateRangeSelection(range: { from: Date, to: Date }) {
       console.log(`Selected range: ${range.from} - ${range.to}`);
-    }
+      this.spinner.show();
+
+      setTimeout(() => {
+         this.loadChart();
+         this.spinner.hide();
+      }, 1000);
+   }
 
 }

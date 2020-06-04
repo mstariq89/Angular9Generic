@@ -16,15 +16,15 @@ export class DevicehistoryComponent implements OnInit {
    highcharts = Highcharts;
    chartOptions: any;
    chartHC: Highcharts.Chart;
-   
-   constructor(private spinner: NgxSpinnerService,private sweetalertSvc : Sweetalert2Service) { }
+
+   constructor(private spinner: NgxSpinnerService, private sweetalertSvc: Sweetalert2Service) { }
 
    ngOnInit(): void {
-      this.loadChart();
+      //this.loadChart();
    }
 
-   loadChart(){
-     this.chartOptions = {
+   loadChart() {
+      this.chartOptions = {
          chart: {
             type: "spline"
          },
@@ -94,57 +94,61 @@ export class DevicehistoryComponent implements OnInit {
       };
 
       this.chartHC = Highcharts.chart('chartContainer', this.chartOptions);
-      let svg = this.chartHC.getSVG({});
-      console.log("Highcharts SVG", svg);
    }
 
-   onClickPdfDownload(){
+   onClickPdfDownload() {
       debugger;
       this.spinner.show();
-      
+
       setTimeout(() => {
          this.pdfDownload();
-      
+
          /** spinner ends after 5 seconds */
          this.spinner.hide();
-       }, 1000);
-      
+      }, 1000);
+
    }
    pdfDownload() {
       var doc = new jspdf('landscape', 'pt', 'a4', true);
       // doc.text('Hello world!', 10, 10);
       let chartSVG = this.chartHC.getSVG({
          chart: {
-           width: 1600,
-           height: 500
+            width: 1600,
+            height: 500
          }
-       });
-       var chartCanvas = document.createElement('canvas');
+      });
+      var chartCanvas = document.createElement('canvas');
       canvg(chartCanvas, chartSVG);
       var chartBase64 = chartCanvas.toDataURL('image/PNG');
       doc.addImage(chartBase64, 'PNG', 30, 100, 790, 350, '', 'FAST');
       this.addPageNumber(doc);
       doc.save("EHealthCare.pdf");
-      this.sweetalertSvc.sweetalertShow('success','Report PDF downloaded successfully',"Now you can view the downloaded pdf");
+      this.sweetalertSvc.sweetalertShow('success', 'Report PDF downloaded successfully', "Now you can view the downloaded pdf");
    }
 
    addPageNumber(doc: any) {
 
       let totalPages = doc.internal.getNumberOfPages();
       for (var i = 0; i < totalPages; i++) {
-        doc.setPage(i);
-        doc.setFontSize(7);
-        doc.setTextColor(128, 128, 128);
-        doc.line(20, doc.internal.pageSize.height - 40, 820, doc.internal.pageSize.height - 40);
-        
-        doc.setFontType("normal");
-        doc.setFontSize(10);
-        doc.setFontSize(8);
-        doc.text("Page " + doc.internal.getCurrentPageInfo().pageNumber + " of " + totalPages, 780, doc.internal.pageSize.height - 15);
-      }
-    }
+         doc.setPage(i);
+         doc.setFontSize(7);
+         doc.setTextColor(128, 128, 128);
+         doc.line(20, doc.internal.pageSize.height - 40, 820, doc.internal.pageSize.height - 40);
 
-    public onDateRangeSelection(range: { from: Date, to: Date }) {
+         doc.setFontType("normal");
+         doc.setFontSize(10);
+         doc.setFontSize(8);
+         doc.text("Page " + doc.internal.getCurrentPageInfo().pageNumber + " of " + totalPages, 780, doc.internal.pageSize.height - 15);
+      }
+   }
+
+   public onDateRangeSelection(range: { from: Date, to: Date }) {
       console.log(`Selected range: ${range.from} - ${range.to}`);
-    }
+      this.spinner.show();
+
+      setTimeout(() => {
+         this.loadChart();
+         this.spinner.hide();
+      }, 1000);
+   }
 }

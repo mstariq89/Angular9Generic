@@ -32,6 +32,12 @@ export class DashboardComponent implements OnInit {
   public onDateRangeSelection(range: { from: Date, to: Date }) {
     debugger;
     console.log(`Selected range: ${range.from} - ${range.to}`);
+    this.spinner.show();
+ 
+    setTimeout(() => {
+       /** spinner ends after 5 seconds */
+       this.spinner.hide();
+      }, 1000);
   }
 
 }
