@@ -1,13 +1,15 @@
 <div class="modal-header">
-    <h4 class="modal-title">Session Timeout warning</h4>
+    <h4 class="modal-title">
+        <i class="fas fa-exclamation-triangle fa-lg text-warning"></i>
+        Session Timeout</h4>
 </div>
 <div class="modal-body text-center" >
-    <span >
+    <div>
         Your session is about to expire!
-        You will be timed out in
-        {{(countMinutes !== 0 ? + countMinutes+' Minute'+(countMinutes > 1 ? 's ' : ' ') : '') + countSeconds+' Seconds'}}
-    </span>
-    <br/>
+    </div>
+    <div>
+        You will be timed out in {{(countMinutes !== 0 ? + countMinutes+' Minute'+(countMinutes > 1 ? 's ' : ' ') : '') + countSeconds+' Seconds'}}
+    </div>
     <p>
         <ngb-progressbar type="info" [value]="progressCount" [max]="progressMaxVal" textType="white" [striped]="true"
             [animated]="true" animate="false" class="progress-striped active">

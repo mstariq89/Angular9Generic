@@ -5,6 +5,7 @@ import {
   ViewChild,
   Output,
   EventEmitter,
+  ElementRef,
 } from '@angular/core';
 
 import * as $ from 'jquery';
@@ -20,7 +21,7 @@ import { AuthenticationService } from 'src/app/utils/services/authentication/aut
   styleUrls: ['./menu-navigation.component.scss']
 })
 export class MenuNavigationComponent implements OnInit, AfterViewInit {
-  @ViewChild('mainSidebar', { static: false }) mainSidebar;
+  @ViewChild('mainSidebar', { static: false }) mainSidebar: ElementRef;
   @Output() mainSidebarHeight: EventEmitter<any> = new EventEmitter<any>();
   user: User;
 

@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:4000',
-  idleTimeout: 900, //In seconds 60 = 1 min
-  idleTimeoutPeriod: 300, //In seconds
-  checkIdleTimeoutInterval: 30 //In seconds
+  idleTimeout: 60, //In seconds 60 = 1 min
+  idleTimeoutPeriod: 90, //In seconds
+  checkIdleTimeoutInterval: 15 //In seconds
 };
 
 /*

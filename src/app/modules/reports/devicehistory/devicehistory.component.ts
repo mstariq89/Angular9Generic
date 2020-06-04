@@ -143,4 +143,8 @@ export class DevicehistoryComponent implements OnInit {
         doc.text("Page " + doc.internal.getCurrentPageInfo().pageNumber + " of " + totalPages, 780, doc.internal.pageSize.height - 15);
       }
     }
+
+    public onDateRangeSelection(range: { from: Date, to: Date }) {
+      console.log(`Selected range: ${range.from} - ${range.to}`);
+    }
 }

@@ -5,7 +5,7 @@
             <h5 class="card-title">Device History</h5>
             
             <div class="card-tools">
-               <app-date-range-selector></app-date-range-selector>
+               <app-date-range-selector (dateRangeSelection)="onDateRangeSelection($event)"></app-date-range-selector>
                <button type="button" class="btn btn-tool" (click)="onClickPdfDownload();">
                   <i class="fas fa-file-pdf fa-2x" style="color: #3c8dbc;"></i>
               </button>

@@ -522,4 +522,8 @@ export class DevicedetailsComponent implements OnInit {
 
    }
 
+   public onDateRangeSelection(range: { from: Date, to: Date }) {
+      console.log(`Selected range: ${range.from} - ${range.to}`);
+    }
+
 }

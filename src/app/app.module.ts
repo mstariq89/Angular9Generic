@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './shared/layout/layout.module';
 import { DecimalPipe } from '@angular/common';
 import { AuthModule } from './auth/auth.module';
@@ -22,6 +23,7 @@ import { fakeBackendProvider } from './utils/helpers/fake-backend';
     AppRoutingModule,
     LayoutModule,
     NgxSpinnerModule,
+    BrowserAnimationsModule,
     AuthModule
   ],
   providers: [
