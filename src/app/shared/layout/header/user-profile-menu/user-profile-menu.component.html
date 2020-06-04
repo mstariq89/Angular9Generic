@@ -19,7 +19,7 @@
     <ul #dropdownMenu class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
       <!-- User image -->
       <li class="user-header bg-primary">
-        <img [src]="user.image" class="img-circle elevation-2" alt="User Image" />
+        <img [src]="user.image" class="img-circle elevation-4" alt="User Image" />
   
         <p>
           Alexander Pierce - Admin
@@ -29,8 +29,14 @@
       
       <!-- Menu Footer-->
       <li class="user-footer">
-        <button type="button" class="btn btn-outline-primary" [routerLink]="['/usersettings/profile']">Profile</button>
-        <button type="button" class="btn btn-outline-primary float-right" (click)="logout()">Sign out</button>
+        <button type="button" class="btn btn-outline-primary btn-sm" style="width: 60px;" [routerLink]="['/usersettings/profile']">
+          <i class="fas fa-user-cog fa-lg"></i><br>
+          <span style="font-size: 12px;">Profile</span>
+        </button>
+        <button type="button" class="btn btn-outline-primary btn-sm float-right" style="width: 60px;" (click)="logout()">
+          <i class="fas fa-power-off fa-lg"></i><br>
+          <span style="font-size: 12px;">Signout</span>
+        </button>
         <!-- <a [routerLink]="['/usersettings/profile']" class="btn btn-default btn-flat">
           Profile
         </a> -->

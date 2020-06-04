@@ -62,7 +62,8 @@
             </li>
             <li class="nav-item">
               <a [routerLink]="['/usermanagement/manageroles']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
-                <i class="fas fa-users-cog nav-icon"></i>
+                <!-- <i class="fas fa-users-cog nav-icon"></i> -->
+                <i class="nav-icon fas fa-user-shield"></i>
                 <p>{{'UserManagement.ManageRolesMenu' | translate}}</p>
               </a>
             </li>
@@ -70,7 +71,7 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-user-cog"></i>
+            <i class="nav-icon fas fa-sitemap"></i>
             <p>
               {{'CustomerManagement.Menu' | translate}}
               <i class="right fas fa-angle-left"></i>
@@ -91,7 +92,8 @@
             </li>
             <li class="nav-item">
               <a [routerLink]="['/customermanagement/assign-device']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
-                <i class="fas fa-clipboard-check nav-icon"></i>
+                <!-- <i class="fas fa-clipboard-check nav-icon"></i> -->
+                <i class="nav-icon fas fa-laptop-house"></i>
                 <p>{{'CustomerManagement.AssignDeviceMenu' | translate}}</p>
               </a>
             </li>
