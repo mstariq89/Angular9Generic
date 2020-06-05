@@ -52,11 +52,6 @@ export class DateRangeSelectorComponent implements OnInit {
 
     const onDateSelected = (start, end) => {
       this.setDateRangeVal(start, end);
-      const dateRange = {
-        from: start,
-        to: end
-      };
-      this.dateRangeSelection.emit(dateRange);
     };
 
     $('.daterange').daterangepicker({
@@ -126,22 +121,27 @@ export class DateRangeSelectorComponent implements OnInit {
 
   }
 
-  onDateSelected(start, end) {
+  onDateSelected(startDate, endDate) {
     debugger;
-    this.setDateRangeVal(start, end);
+    this.setDateRangeVal(startDate, endDate);
   }
-  setDateRangeVal(start, end) {
+  
+  setDateRangeVal(startDate, endDate) {
     localStorage.setItem("isDateStored", "true");
-    localStorage.setItem("startDate", start);
-    localStorage.setItem("endDate", end);
-    this.dateFormatStr = start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY');
+    localStorage.setItem("startDate", startDate);
+    localStorage.setItem("endDate", endDate);
+    this.dateFormatStr = startDate.format('MMMM D, YYYY') + ' - ' + endDate.format('MMMM D, YYYY');
     $('.daterange span').html(this.dateFormatStr);
 
     //$('.customDateRange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
 
+    this.emitDateRangePicker(startDate,endDate);
+  }
+
+  emitDateRangePicker(startDate,endDate){
     const dateRange = {
-      from: start,
-      to: end
+      from: startDate,
+      to: endDate
     };
     this.dateRangeSelection.emit(dateRange);
   }

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TranslateService } from '@ngx-translate/core';
+import * as Highcharts from 'highcharts';
+import HC_exporting from 'highcharts/modules/exporting';
+import { DatePipe } from '@angular/common';
+HC_exporting(Highcharts);
 declare var $: any;
 
 @Component({
@@ -9,8 +13,13 @@ declare var $: any;
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(private spinner: NgxSpinnerService,public translate:TranslateService) {
+  chartOptions: any;
+  chartHC: Highcharts.Chart;
+  startDateStr: any;
+  endDateStr: any;
+  constructor(private spinner: NgxSpinnerService,
+    public translate:TranslateService,
+    private datePipe: DatePipe) {
     
    }
 
@@ -33,11 +42,114 @@ export class DashboardComponent implements OnInit {
     debugger;
     console.log(`Selected range: ${range.from} - ${range.to}`);
     this.spinner.show();
- 
+    this.startDateStr = this.datePipe.transform(range.from, 'MM-dd-yyyy');
+    this.endDateStr = this.datePipe.transform(range.to, 'MM-dd-yyyy');
     setTimeout(() => {
+      this.loadChart();
        /** spinner ends after 5 seconds */
        this.spinner.hide();
       }, 1000);
   }
+
+  loadChart() {
+   //  this.chartOptions = {
+   //     chart: {
+   //        type: "spline"
+   //     },
+   //     exporting: {
+   //        enabled: false
+   //     },
+   //     credits: {
+   //        enabled: false
+   //     },
+   //     title: {
+   //        text: "Monthly Average Temperature"
+   //     },
+   //     subtitle: {
+   //        text: this.startDateStr + ' to ' + this.endDateStr
+   //     },
+   //     xAxis: {
+   //        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+   //           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+   //     },
+   //     yAxis: {
+   //        title: {
+   //           text: "Temperature °C"
+   //        }
+   //     },
+   //     tooltip: {
+   //        valueSuffix: " °C"
+   //     },
+   //     series: [
+   //        {
+   //           name: 'Tokyo',
+   //           data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+   //        },
+   //        {
+   //           name: 'New York',
+   //           data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+   //        },
+   //        {
+   //           name: 'Berlin',
+   //           data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+   //        },
+   //        {
+   //           name: 'London',
+   //           data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+   //        }
+   //     ]
+   //  };
+
+   this.chartOptions = {   
+      chart : {
+         type: 'column'
+      },
+      title : {
+         text: 'Total fruit consumption, grouped by gender'   
+      },
+      xAxis : {
+         categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+      },
+      yAxis : {
+         allowDecimals: false,
+         min: 0,
+         title: {
+            text: 'Number of fruits'
+         }     
+      },
+      plotOptions : {
+         column: {
+            stacking: 'normal'        
+         }
+      },
+      credits : {
+         enabled: false
+      },
+      series : [
+         {
+            name: 'John',
+            data: [5, 3, 4, 7, 2],
+            stack: 'male'
+         }, 
+         {
+            name: 'Joe',
+            data: [3, 4, 4, 2, 5],
+            stack: 'male'
+         }, 
+         {
+            name: 'Jane',
+            data: [2, 5, 6, 2, 1],
+            stack: 'female'
+         }, 
+         {
+            name: 'Janet',
+            data: [3, 0, 4, 4, 3],
+            stack: 'female'
+         }
+      ]
+   };
+
+    this.chartHC = Highcharts.chart('chartContainer', this.chartOptions);
+ }
 
 }

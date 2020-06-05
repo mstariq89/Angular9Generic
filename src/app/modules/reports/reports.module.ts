@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { ReportsRoutingModule } from './reports-routing.module';
 import { DevicehistoryComponent } from './devicehistory/devicehistory.component';
@@ -19,5 +19,6 @@ import { CommonControlModule } from 'src/app/shared/common-control/common-contro
     HighchartsChartModule,
     CommonControlModule
   ],
+  providers: [DatePipe]
 })
 export class ReportsModule { }

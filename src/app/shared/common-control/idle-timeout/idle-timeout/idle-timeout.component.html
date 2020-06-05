@@ -1,24 +1,74 @@
-<div class="modal-header">
-    <h4 class="modal-title">
-        <i class="fas fa-exclamation-triangle fa-lg text-warning"></i>
-        Session Timeout</h4>
-</div>
-<div class="modal-body text-center" >
-    <div>
-        Your session is about to expire!
+<!-- <div class="modal-dialog modal-sm">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <i class="fas fa-exclamation-triangle fa-lg text-warning"></i>
+            Session Timeout</h4>
     </div>
-    <div>
-        You will be timed out in {{(countMinutes !== 0 ? + countMinutes+' Minute'+(countMinutes > 1 ? 's ' : ' ') : '') + countSeconds+' Seconds'}}
+    <div class="modal-body text-center">
+        <div>
+            Your session is about to expire!
+        </div>
+        <div>
+            You will be timed out in
+            {{(countMinutes !== 0 ? + countMinutes+' Minute'+(countMinutes > 1 ? 's ' : ' ') : '') + countSeconds+' Seconds'}}
+        </div>
+        <p>
+            <ngb-progressbar type="info" [value]="progressCount" [max]="progressMaxVal" textType="white"
+                [striped]="true" [animated]="true" animate="false" class="progress-striped active">
+                {{ progressCount / progressMaxVal | percent }}
+            </ngb-progressbar>
+        </p>
+        <span>To stay, click <b>Continue</b> otherwise <b>Logout</b></span>
     </div>
-    <p>
-        <ngb-progressbar type="info" [value]="progressCount" [max]="progressMaxVal" textType="white" [striped]="true"
-            [animated]="true" animate="false" class="progress-striped active">
-            {{ progressCount / progressMaxVal | percent }}
-        </ngb-progressbar>
-    </p>
-    <span>To stay, click <b>Continue</b> otherwise <b>Logout</b></span>
-</div>
-<div class="modal-footer text-center">
-    <button type="button" class="btn btn-primary" (click)="continue()">Continue</button>
-    <button type="button" class="btn btn-outline-secondary" (click)="logout()">Logout</button>
-</div>
+    <div class="modal-footer text-center">
+        <button type="button" class="btn btn-primary" (click)="continue()">Continue</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="logout()">Logout</button>
+    </div>
+</div> -->
+
+
+
+<!-- The Modal -->
+<!-- <div class="modal-dialog modal-sm"> -->
+    <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <i class="fas fa-exclamation-triangle fa-lg text-danger"></i>
+                Session Idle Timeout
+            </h4>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body text-center">
+            <div style="font-size: 22px;">
+                Your session is about to expire!
+            </div>
+            <div>
+                You will be timed out in
+                {{(countMinutes !== 0 ? + countMinutes+' Minute'+(countMinutes > 1 ? 's ' : ' ') : '') + countSeconds+' Seconds'}}
+            </div>
+            <p>
+                <ngb-progressbar type="danger" [value]="progressCount" [max]="progressMaxVal" textType="white"
+                    [striped]="true" [animated]="true" animate="false" class="progress-striped active">
+                    {{ progressCount / progressMaxVal | percent }}
+                </ngb-progressbar>
+            </p>
+            <span>To stay, click <b>Continue</b> otherwise <b>Signout</b></span>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-success btn-sm" (click)="continue()">
+                <i class="fas fa-sync-alt fa-lg"></i>
+                Continue
+            </button>
+            <button type="button" class="btn btn-outline-danger btn-sm" (click)="logout()">
+                <i class="fas fa-power-off fa-lg"></i>
+                Signout
+            </button>
+        </div>
+
+    </div>
+<!-- </div> -->

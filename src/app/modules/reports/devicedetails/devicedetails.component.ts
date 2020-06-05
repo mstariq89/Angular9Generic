@@ -15,7 +15,7 @@ declare var $: any;
    selector: 'app-devicedetails',
    templateUrl: './devicedetails.component.html',
    styleUrls: ['./devicedetails.component.scss'],
-   providers: [DatePipe]
+   // providers: [DatePipe]
 })
 export class DevicedetailsComponent implements OnInit {
    highcharts = Highcharts;
@@ -25,8 +25,8 @@ export class DevicedetailsComponent implements OnInit {
    chartOptionsCC: any;
    chartOptionsBC: any;
    chartOptionsSC: any;
-   currDateStr: any;
-   pastDateStr: any;
+   startDateStr: any;
+   endDateStr: any;
    currDate = new Date();
    imgLogoToBase64: any;
 
@@ -41,8 +41,8 @@ export class DevicedetailsComponent implements OnInit {
       private sweetalertSvc: Sweetalert2Service) {
 
 
-      this.currDateStr = this.datePipe.transform(this.currDate, 'yyyy/MM/dd');
-      this.pastDateStr = this.datePipe.transform(new Date().setDate(this.currDate.getDate() - 30), 'yyyy/MM/dd');
+      // this.currDateStr = this.datePipe.transform(this.currDate, 'yyyy/MM/dd');
+      // this.pastDateStr = this.datePipe.transform(new Date().setDate(this.currDate.getDate() - 30), 'yyyy/MM/dd');
 
    }
 
@@ -134,7 +134,7 @@ export class DevicedetailsComponent implements OnInit {
             text: 'Pie Chart'
          },
          subtitle: {
-            text: this.currDateStr + ' - ' + this.pastDateStr
+            text: this.startDateStr + ' to ' + this.endDateStr
          },
          tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -157,19 +157,19 @@ export class DevicedetailsComponent implements OnInit {
          },
          series: [{
             type: 'pie',
-            name: 'Browser share',
+            name: 'Device Details',
             data: [
-               ['Firefox', 45.0],
-               ['IE', 26.8],
+               ['Assigned', 60.0],
+               ['Manufacture', 5.0],
                {
-                  name: 'Chrome',
-                  y: 12.8,
-                  sliced: true,
-                  selected: true
+                  name: 'Activated',
+                  y: 30.0,
+                  // sliced: true,
+                  // selected: true
                },
-               ['Safari', 8.5],
-               ['Opera', 6.2],
-               ['Others', 0.7]
+               ['Decommissioned', 3.0],
+               ['Deactivated', 1.0],
+               ['Under Service', 1.0]
             ]
          }]
       };
@@ -181,7 +181,7 @@ export class DevicedetailsComponent implements OnInit {
             text: 'Column Chart'
          },
          subtitle: {
-            text: this.currDateStr + ' - ' + this.pastDateStr
+            text: this.startDateStr + ' to ' + this.endDateStr
          },
          credits: {
             enabled: false
@@ -270,7 +270,7 @@ export class DevicedetailsComponent implements OnInit {
             text: 'Monthly Average Rainfall'
          },
          subtitle: {
-            text: this.currDateStr + ' - ' + this.pastDateStr
+            text: this.startDateStr + ' to ' + this.endDateStr
          },
          xAxis: {
             categories: [
@@ -346,7 +346,7 @@ export class DevicedetailsComponent implements OnInit {
             text: 'Stacked Column Chart'
          },
          subtitle: {
-            text: this.currDateStr + ' - ' + this.pastDateStr
+            text: this.startDateStr + ' to ' + this.endDateStr
          },
          xAxis: {
             categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -525,7 +525,8 @@ export class DevicedetailsComponent implements OnInit {
    public onDateRangeSelection(range: { from: Date, to: Date }) {
       console.log(`Selected range: ${range.from} - ${range.to}`);
       this.spinner.show();
-
+      this.startDateStr = this.datePipe.transform(range.from, 'MM-dd-yyyy');
+      this.endDateStr = this.datePipe.transform(range.to, 'MM-dd-yyyy');
       setTimeout(() => {
          this.loadChart();
          this.spinner.hide();

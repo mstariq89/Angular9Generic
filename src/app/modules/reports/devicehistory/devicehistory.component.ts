@@ -3,9 +3,11 @@ import * as jspdf from 'jspdf';
 import canvg from 'canvg';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
+HC_exporting(Highcharts);
+
 import { Sweetalert2Service } from 'src/app/utils/services/sweetalert2/sweetalert2.service';
 import { NgxSpinnerService } from 'ngx-spinner';
-HC_exporting(Highcharts);
+import { DatePipe } from '@angular/common';
 
 @Component({
    selector: 'app-devicehistory',
@@ -17,7 +19,12 @@ export class DevicehistoryComponent implements OnInit {
    chartOptions: any;
    chartHC: Highcharts.Chart;
 
-   constructor(private spinner: NgxSpinnerService, private sweetalertSvc: Sweetalert2Service) { }
+   startDateStr: any;
+   endDateStr: any;
+
+   constructor(private spinner: NgxSpinnerService, 
+      private sweetalertSvc: Sweetalert2Service,
+      private datePipe: DatePipe) { }
 
    ngOnInit(): void {
       //this.loadChart();
@@ -59,7 +66,7 @@ export class DevicehistoryComponent implements OnInit {
             text: "Monthly Average Temperature"
          },
          subtitle: {
-            text: "Source: WorldClimate.com"
+            text: this.startDateStr + ' to ' + this.endDateStr
          },
          xAxis: {
             categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -146,6 +153,8 @@ export class DevicehistoryComponent implements OnInit {
       console.log(`Selected range: ${range.from} - ${range.to}`);
       this.spinner.show();
 
+      this.startDateStr = this.datePipe.transform(range.from, 'MM-dd-yyyy');
+      this.endDateStr = this.datePipe.transform(range.to, 'MM-dd-yyyy');
       setTimeout(() => {
          this.loadChart();
          this.spinner.hide();
