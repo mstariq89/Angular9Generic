@@ -42,8 +42,8 @@ export class DashboardComponent implements OnInit {
     debugger;
     console.log(`Selected range: ${range.from} - ${range.to}`);
     this.spinner.show();
-    this.startDateStr = this.datePipe.transform(range.from, 'MM-dd-yyyy');
-    this.endDateStr = this.datePipe.transform(range.to, 'MM-dd-yyyy');
+    this.startDateStr = this.datePipe.transform(range.from, 'MM/dd/yyyy');
+    this.endDateStr = this.datePipe.transform(range.to, 'MM/dd/yyyy');
     setTimeout(() => {
       this.loadChart();
        /** spinner ends after 5 seconds */
