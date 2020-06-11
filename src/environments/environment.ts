@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:4000',
   idleTimeout: 60, //In seconds 60 = 1 min
-  idleTimeoutPeriod: 90, //In seconds
+  idleTimeoutPeriod: 30, //In seconds
   checkIdleTimeoutInterval: 15 //In seconds
 };
 

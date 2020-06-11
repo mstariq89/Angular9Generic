@@ -33,33 +33,80 @@
     <div class="modal-content">
 
         <!-- Modal Header -->
-        <div class="modal-header">
+        <!-- <div class="modal-header">
             <h4 class="modal-title">
                 <i class="fas fa-exclamation-triangle fa-lg text-danger"></i>
                 Session Idle Timeout
             </h4>
-        </div>
+        </div> -->
 
         <!-- Modal body -->
-        <div class="modal-body text-center">
-            <div style="font-size: 22px;">
+        <!-- <div class="modal-body text-center"> -->
+            <!-- <div style="font-size: 22px;">
                 Your session is about to expire!
             </div>
             <div>
                 You will be timed out in
                 {{(countMinutes !== 0 ? + countMinutes+' Minute'+(countMinutes > 1 ? 's ' : ' ') : '') + countSeconds+' Seconds'}}
+            </div> -->
+            <!-- <div id="clockdiv">
+                <div>
+                    <span class="minutes">{{countMinutes}}</span>
+                    <div class="smalltext">Minutes</div>
+                </div>
+                <div>
+                    <span class="seconds">{{countSeconds}}</span>
+                    <div class="smalltext">Seconds</div>
+                </div>
+            </div> -->
+
+            <div class="rounded bg-gradient-4 text-white shadow p-5 text-center mb-5">
+                <p class="mb-0 font-weight-bold text-uppercase">
+                    <i class="fas fa-exclamation-triangle fa-2x text-danger"></i>
+                    Your session is about to expire! <br>
+                </p>
+                <p class="mb-0">
+                    in
+                </p>
+                <div id="clock-c" class="countdown py-4">
+                    <span class="h1 font-weight-bold">{{countMinutes}}</span> Min
+                    <span class="h1 font-weight-bold">{{countSeconds}}</span> Sec
+                </div>
+                <p>
+                    <ngb-progressbar type="danger" [value]="progressCount" [max]="progressMaxVal" textType="white"
+                        [striped]="true" [animated]="true" animate="false" class="progress-striped active">
+                        {{ progressCount / progressMaxVal | percent }}
+                    </ngb-progressbar>
+                </p>
+
+                <!-- Call to actions -->
+                <ul class="list-inline">
+                    <li class="list-inline-item pt-2">
+                        <button id="btn-reset" type="button" class="btn btn-outline-success btn-sm btn-demo" (click)="continue()">
+                            <i class="fas fa-sync-alt fa-lg"></i>
+                            Continue
+                        </button>
+                    </li>
+                    <li class="list-inline-item pt-2">
+                        <button id="btn-pause" type="button" class="btn btn-outline-danger btn-sm btn-demo" (click)="logout()">
+                            <i class="fas fa-power-off fa-lg"></i>
+                            Signout
+                        </button>
+                    </li>
+                </ul>
+
             </div>
-            <p>
+            <!-- <p>
                 <ngb-progressbar type="danger" [value]="progressCount" [max]="progressMaxVal" textType="white"
                     [striped]="true" [animated]="true" animate="false" class="progress-striped active">
                     {{ progressCount / progressMaxVal | percent }}
                 </ngb-progressbar>
             </p>
-            <span>To stay, click <b>Continue</b> otherwise <b>Signout</b></span>
-        </div>
+            <span>To stay, click <b>Continue</b> otherwise <b>Signout</b></span> -->
+        <!-- </div> -->
 
         <!-- Modal footer -->
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
             <button type="button" class="btn btn-outline-success btn-sm" (click)="continue()">
                 <i class="fas fa-sync-alt fa-lg"></i>
                 Continue
@@ -68,7 +115,7 @@
                 <i class="fas fa-power-off fa-lg"></i>
                 Signout
             </button>
-        </div>
+        </div> -->
 
     </div>
 <!-- </div> -->

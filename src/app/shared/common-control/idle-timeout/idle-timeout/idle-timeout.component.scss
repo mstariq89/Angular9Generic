@@ -7,3 +7,124 @@
 //     width: 400px;
 // }
 
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,.5);
+    outline: 0;
+    height: 300px;
+}
+
+
+
+// #clockdiv{
+// 	font-family: sans-serif;
+// 	color: #fff;
+// 	display: inline-block;
+// 	font-weight: 100;
+// 	text-align: center;
+// 	font-size: 30px;
+// }
+
+// #clockdiv > div{
+// 	padding: 10px;
+// 	border-radius: 3px;
+// 	background: #00BF96;
+// 	display: inline-block;
+// }
+
+// #clockdiv div > span{
+// 	padding: 15px;
+// 	border-radius: 3px;
+// 	background: #00816A;
+// 	display: inline-block;
+// }
+
+// .smalltext{
+// 	padding-top: 5px;
+// 	font-size: 16px;
+// }
+
+
+
+
+// .countdown {
+//     text-transform: uppercase;
+//     font-weight: bold;
+// }
+
+// .countdown span {
+//     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+//     font-size: 3rem;
+//     margin-left: 0.8rem;
+// }
+
+// .countdown span:first-of-type {
+//     margin-left: 0;
+// }
+
+// .countdown-circles {
+//     text-transform: uppercase;
+//     font-weight: bold;
+// }
+
+// .countdown-circles span {
+//     width: 100px;
+//     height: 100px;
+//     border-radius: 50%;
+//     background: rgba(255, 255, 255, 0.2);
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+// }
+
+// .countdown-circles span:first-of-type {
+//     margin-left: 0;
+// }
+
+
+/*
+*
+* ==================================================
+* FOR DEMO PURPOSES
+* ==================================================
+*
+*/
+// body {
+//     min-height: 100vh;
+// }
+
+
+.bg-gradient-4 {
+    background: #030c11;
+    // background: -webkit-linear-gradient(to right, #007991, #78ffd6);
+	// background: linear-gradient(to right, #007991, #78ffd6);
+	height: 100%;
+}
+
+// .rounded {
+//     border-radius: 1rem !important;
+// }
+
+.btn-demo {
+    // padding: 0.5rem 2rem !important;
+    border-radius: 30rem !important;
+    // background: rgba(255, 255, 255, 0.3);
+    // color: #fff;
+    text-transform: uppercase;
+    font-weight: bold !important;
+}
+
+// .btn-demo:hover, .btn-demo:focus {
+//     color: #fff;
+//     background: rgba(255, 255, 255, 0.5);
+// }
