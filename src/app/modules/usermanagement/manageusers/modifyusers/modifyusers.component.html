@@ -56,6 +56,11 @@
     <div class="d-flex justify-content-between p-2" *ngIf="(countries$ | async)?.length>0">
       <ngb-pagination
         [collectionSize]="(total$ | async)!" [(page)]="service.page" [pageSize]="service.pageSize" [boundaryLinks]="true">
+        <ng-template ngbPaginationFirst>First</ng-template>
+        <ng-template ngbPaginationPrevious>Prev</ng-template>
+        <ng-template ngbPaginationNext>Next</ng-template>
+        <ng-template ngbPaginationLast>Last</ng-template>
+
       </ngb-pagination>
   
       <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">

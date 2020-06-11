@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit {
           this.error = error;
           this.loading = false;
           console.log("Login Error" , this.error);
-    this.sweetalertSvc.sweetalertShow("error",this.error,"Please  check the credentials");
+    this.sweetalertSvc.sweetalertShow("error",this.error,"Please check the credentials");
 
         });
   }

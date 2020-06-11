@@ -105,16 +105,22 @@ export class DashboardComponent implements OnInit {
          type: 'column'
       },
       title : {
-         text: 'Total fruit consumption, grouped by gender'   
+         text: 'Device Summary'   
+      },
+      subtitle: {
+         text: this.startDateStr + ' to ' + this.endDateStr
+      },
+      exporting: {
+         enabled: false
       },
       xAxis : {
-         categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+         categories: ['USA', 'EUROPE', 'JAPAN', 'IND']
       },
       yAxis : {
          allowDecimals: false,
          min: 0,
          title: {
-            text: 'Number of fruits'
+            text: 'Number of devices'
          }     
       },
       plotOptions : {
@@ -127,23 +133,23 @@ export class DashboardComponent implements OnInit {
       },
       series : [
          {
-            name: 'John',
-            data: [5, 3, 4, 7, 2],
+            name: 'Assigned',
+            data: [5, 3, 4, 7],
             stack: 'male'
          }, 
          {
-            name: 'Joe',
-            data: [3, 4, 4, 2, 5],
+            name: 'Activated',
+            data: [3, 4, 4, 2],
             stack: 'male'
          }, 
          {
-            name: 'Jane',
-            data: [2, 5, 6, 2, 1],
+            name: 'Decommissioned',
+            data: [2, 5, 6, 2],
             stack: 'female'
          }, 
          {
-            name: 'Janet',
-            data: [3, 0, 4, 4, 3],
+            name: 'Service',
+            data: [3, 0, 4, 4],
             stack: 'female'
          }
       ]
