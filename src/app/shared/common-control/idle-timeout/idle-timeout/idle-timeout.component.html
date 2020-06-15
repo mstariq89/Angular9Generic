@@ -47,10 +47,10 @@
             in
         </p>
         <div id="clock-b" class="countdown-circles d-flex flex-wrap justify-content-center pt-4">
-            <div class="holder m-2"><span class="h1 font-weight-bold">{{countMinutes}}</span> 
+            <div class="holder m-2"><span class="h1 font-weight-bold">0{{countMinutes}}</span> 
                 Min
             </div>
-            <div class="holder m-2"><span class="h1 font-weight-bold">{{countSeconds}}</span> 
+            <div class="holder m-2"><span class="h1 font-weight-bold">{{countSeconds >= 10 ? countSeconds : ('0' + countSeconds)}}</span> 
                 Sec
             </div>
         </div>
