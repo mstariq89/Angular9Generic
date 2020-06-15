@@ -1,7 +1,77 @@
   
+
+  
   a:hover {
     cursor:pointer;
    }
+
+//    .pagination
+// {
+//   @extend .d-flex, .flex-wrap, .justify-content-center;
+// }
+
+//    .justify-content-center {
+//     display: -ms-flexbox;
+//     display: flex;
+//     -ms-flex-wrap: wrap;
+//     flex-wrap: wrap;
+//     margin-right: -15px;
+//     margin-left: -15px;
+//     justify-content: center!important;
+//     margin-top: 20px;
+// }
+// ngb-pagination > .pagination {
+//     display: -ms-flexbox;
+//     display: flex;
+//     padding-left: 0;
+//     list-style: none;
+//     border-radius: .25rem;
+// }
+// ngb-pagination > .pagination > ol,ul,li {
+//     list-style: none;
+// }
+// ngb-pagination > ul > .page-item .page-link {
+//     box-sizing: border-box;
+//     border:0;
+//     width: 35px;
+//     height: 35px;
+//     font-size: 14px;
+//     text-align: center;
+//     padding: 8px;
+//     margin: 0 2px 0 2px;
+//     text-decoration: none;
+//     color: #555;
+// }
+// ngb-pagination > ul > .page-item .page-link > span {
+//     width: 0;
+//     height: 0;
+//     font-size: 0;
+// }
+// ngb-pagination > ul > .page-item > a {
+//     display: block;
+// }
+// ngb-pagination > ul > .page-item.active > a {
+//     color: #0e77d9;
+//     font-weight: bold;
+// }
+// ngb-pagination > ul > .page-item > a:hover {
+//     color: #0e77d9;
+//     font-weight: bold;
+// }
+
+//    .pagination
+// {
+//   display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+//   display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+//   display: -ms-flexbox;      /* TWEENER - IE 10 */
+//   display: -webkit-flex;     /* NEW - Chrome */
+//   display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+//   justify-content: center;
+//   -webkit-justify-content: center;
+//   flex-wrap : wrap;
+//   -webkit-flex-wrap: wrap;
+// }
+
 
   //  .icon-stack {
   //   position: relative;

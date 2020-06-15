@@ -10,7 +10,27 @@
 @import '~admin-lte/dist/css/adminlte.min.css';
 @import '~admin-lte/plugins/daterangepicker/daterangepicker.css';
 
+//  @import "~bootstrap/scss/bootstrap";
 
+
+// .pagination
+// {
+//   @extend .d-flex, .flex-wrap;
+//   // .justify-content-center;
+// }
+
+.pagination
+{
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  justify-content: center;
+  -webkit-justify-content: center;
+  flex-wrap : wrap;
+  -webkit-flex-wrap: wrap;
+}
               
 ::-webkit-scrollbar {
   width: 0px;

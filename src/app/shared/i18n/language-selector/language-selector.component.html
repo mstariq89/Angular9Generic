@@ -22,14 +22,14 @@
   <div class="dropdown ">
     <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
       <a id="Selectedlang-{{translate.currentLang}}" style="color:black; text-decoration: none">
-        <img src="../../../../assets/images/blank.gif" class="flag flag-{{translate.currentLang}}">
+        <img src="assets/images/blank.gif" class="flag flag-{{translate.currentLang}}">
         <span style="font-size: 12px;color:black;">&nbsp;{{langName(translate.currentLang)}}</span>
       </a>
     </button>
     <ul class="dropdown-menu dropdown-menu-right" role="menu">
       <li *ngFor='let lang of translate.getLangs()' [value]='lang'>
         <a id="Selectedlang-{{lang}}" class="dropdown-item" (click)="switchLang(lang);">
-          <img src="../../../../assets/images/blank.gif" class="flag flag-{{lang}}">
+          <img src="assets/images/blank.gif" class="flag flag-{{lang}}">
           <span style="font-size: 12px;">&nbsp;{{langName(lang)}}</span>
         </a>
       </li>
